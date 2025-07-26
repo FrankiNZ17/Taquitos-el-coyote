@@ -17,6 +17,43 @@
             padding: 0;
         }
 
+        .contenedor-titulo {
+            overflow: hidden;
+            width: 100%;
+            white-space: nowrap;
+        } 
+
+        .titulo-deslizable {
+            display: inline-block;
+            animation: deslizar 10s linear infinite;
+            font-size: 2em;
+            color: #812c05;
+            text-shadow: 0 0 5px #fff, 0 0 10px #f26522, 0 0 20px #f26522;
+        }
+
+        @keyframes deslizar {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+
+        .satisfaccion {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .barra {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .slider {
+            width: 200px;
+        }
+
         img {
             max-width: 100%;
             height: auto;
@@ -48,7 +85,13 @@
             font-size: 18px;
             font-weight: bold;
         }
-     
+ 
+        .logo-principal {
+            display: block;
+            margin: 0 auto 10px auto; /* centra horizontalmente */
+            width: 380px;
+        }
+
         header {
             text-align: center;
             color: rgb(34, 12, 54);
@@ -128,12 +171,47 @@
             border-radius: 12px;
             width: 80%;
             max-width: 800px;
+            text-align: center;
+        }
+       
+        #menu-titulo {
+            font-size: 35px;
+            margin-bottom: 20px;
+            color: #333;
         }
 
         .menu h2 {
             text-align: center;
             font-size: 50px;
             color: #080929c0;
+        }
+
+        .contenido-pagina img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .navegacion {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        } 
+
+        .flecha {
+            background-color: #f26522;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .flecha:hover {
+            background-color: #d9531e;
         }
 
         .categoria {
@@ -144,6 +222,15 @@
             text-align: left;
             font-size: 35px;
             color: black;
+        }
+
+        .contenido-pagina {
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .contenido-pagina.oculto {
+            opacity: 0;
         }
         
         .item h4 {
@@ -211,58 +298,43 @@
 
 <body>
     <header>
-        <img src="logo.png" alt="logo taquitos" style="width: 380px; margin-bottom: 10px;">    
-        <h1>Bienvenidos sean todos a Taquitos El Coyote</h1>
-        <p>Somos los mejores tacos de Nezahualcoyotl</p>    
+        <div class="contenedor-titulo">
+            <h1 class="titulo-deslizable">Taquitos El Coyote</h1>
+        </div>
+        <img src="logo.png" alt="logo taquitos" class="logo-principal">      
+        <h2 class="titulo-deslizable">"El gusto no es mio, sino tuyo"</h2>
+        <p>Bienvenidos sean todos a Taquitos El Coyote</p>
+        <p>los mejores tacos de Nezahualcoyotl</p>      
     </header>
 
     <nav>
     <ul>
-        <li><a href="#quienessomos">Quienes Somos</a></li>
+        <li><a href="#quienessomos">Quienes Somos</a></li> 
         <li><a href="#menu">Menu</a></li>
         <li><a href="#redes">Redes sociales</a></li>
         <li><a href="#ubicacion">Ubicacion</a></li>
-        <li><a href="#politicas">Politicas</a></li>                
+        <li><a href="#políticas">Políticas</a></li>
+        <li><a href="#satisfaccion">Encuesta de satisfaccion</a></li>                
     </ul>
     </nav>
 
     <section id="quienessomos">
         <div class="menu">
             <h2>Nuesta Historia</h2>
-            <p class="descripcion">
-                En un rincón olvidado de la provincia, vivía Franki, un coyote noble y soñador que, junto a su manada, sobrevivía como podía en un ambiente difícil y hostil. Todo empeoró cuando el crudo invierno llegó. La comida comenzó a escasear y la manada, débil y hambrienta, parecía no tener salida. 
-Pero Franki no se rindió. Con las pocas reservas que quedaban, tuvo una idea: 
+            <p class="descripcion" style="margin-top: 15px;">
+            Conoce la historia de Franki, nuestro querido coyote taquero, y cómo nació Taquitos El Coyote.
             </p>
-
-            <p class="descripcion">
-                preparar tacos. Nunca antes su manada había probado algo así, pero Franki, ingenioso y con un gran corazón, creó recetas llenas de sabor y calidez. Al probarlos, la manada quedó maravillada. La comida no solo los alimentó, sino que les devolvió la esperanza. Gracias a Franki, sobrevivieron al invierno. 
-Sin embargo, Franki quería algo más. Quería que el mundo conociera sus tacos. 
-            </p>
-
-            <p class="descripcion">
-                Asi que dejó su hogar y viajó a la ciudad, pero su apariencia de coyote asustaba a las personas. Nadie le daba la oportunidad de compartir su cocina. Derrotado, pero no vencido, siguió caminando hasta llegar a Nezahualcóyotl, donde encontró algo inesperado: tres jóvenes discutían frente a un local vacío. Tenían todo listo para abrir un negocio… pero no sabían cocinar. Ni un huevo podían preparar, ¡ni siquiera hervir agua sin quemarla! 
-Franki, con algo de miedo, se acercó y les ofreció su ayuda. Al principio, los chicos dudaron. ¿Un coyote cocinero? Pero uno de ellos, con una sonrisa sincera, dio un paso al frente y dijo: 
-            </p>
-
-            <p class="descripcion">
-                "Si dices que sabes cocinar, eso es suficiente para mí. Bienvenido al equipo. ¿Cómo te llamas?" 
-            </p>
-
-            <p class="descripcion">
-                "Franki, mucho gusto." 
-            </p>
-
-            <p class="descripcion">
-                Desde ese día, los cuatro formaron un equipo imparable. Así fue como nació Taquitos El Coyote, una taquería que no solo ofrece comida deliciosa, sino que comparte la historia de un coyote que nunca se rindió. 
-            </p>
-
+            <video width="100%" height="auto" controls autoplay muted loop style="border-radius: 12px; box-shadow: 2px 2px 10px rgba(0,0,0,0.3);">
+            <source src="historia.mp4" type="video/mp4">
+            </video>
+        
             <h2>Socios</h2>
             <div class="socios-container">
                 <div class="socio socio2">
                     <p class="descripcion">Carlos Raymundo Navor Rojas</p>
                     <img src="reymond.jpeg" alt="Raymundo">
                     <p class="descripcion">
-                        Raymundo tiene 22 años. Es Estudiante en la Licenciatura en Contaduría y Finanzas.
+                        Raymundo tiene 22 años. Es Pasante en la Licenciatura en Contaduría y Finanzas.
     Es responsable del área de producción, relaciones públicas y diseño gráfico en Taquitos El Coyote. Su enfoque combina conocimientos contables con habilidades digitales en marketing, edición de imágenes y video, y estrategias de comunicación.<br><br>
     Destaca por su pensamiento crítico, liderazgo, autodisciplina y capacidad autodidacta. Tiene experiencia en análisis de datos financieros, elaboración de estados contables y desarrollo de contenido visual y publicitario.<br><br>
     <em>Valores:</em> Confianza, igualdad, respeto, justicia, amabilidad, honestidad y responsabilidad.
@@ -275,7 +347,7 @@ Franki, con algo de miedo, se acercó y les ofreció su ayuda. Al principio, los
                     <p class="descripcion">Daniel Segundo Martinez</p>
                     <img src="daniel.jpeg" alt="Daniel">
                     <p class="descripcion">
-                        Daniel tiene 21 años. Es estudiante de la Licenciatura en Contaduría y Finanzas.
+                        Daniel tiene 21 años. Es Pasante de la Licenciatura en Contaduría y Finanzas.
     Apasionado por los números y la administración, Daniel es responsable del área contable de Taquitos El Coyote, elaborando estados financieros y gestionando recursos.<br><br>
     Tiene conocimientos en costos, producción, almacén, contratos y personal. Entre sus habilidades destacan el liderazgo, la responsabilidad y la negociación.<br><br>
     <em>Valores:</em> Honestidad, respeto, compañerismo y valoración de las personas.
@@ -287,7 +359,7 @@ Franki, con algo de miedo, se acercó y les ofreció su ayuda. Al principio, los
                     <p class="descripcion">Kevin Brayan Rojo Viruett</p>
                     <img src="kevin.jpeg" alt="Kevin">
                     <p class="descripcion">
-                        Kevin tiene 25 años. Es estudiante en la Licenciado en Contaduría y Finanzas.
+                        Kevin tiene 24 años. Es Pasante en la Licenciado en Contaduría y Finanzas.
     Es responsable del análisis financiero en Taquitos El Coyote. Su función es gestionar, registrar y presentar la información económica del negocio para garantizar decisiones acertadas y cumplimiento fiscal.<br><br>
     Tiene experiencia en auditoría, control interno y análisis de liquidez y rentabilidad. Se destaca por su pensamiento crítico, atención al detalle y habilidades de comunicación financiera.<br><br>
     <em>Valores:</em> Eficiencia, responsabilidad y transparencia.
@@ -351,99 +423,111 @@ Franki, con algo de miedo, se acercó y les ofreció su ayuda. Al principio, los
 
     <section id="menu">
         <div class="menu">
-        <h2>menu</h2>
-        <div class="categoria">
-            <h3>Tacos Clasicos</h3>
-            
-            <div class="item">
-                <h4>Pastor - $16</h4>
-                <img src="pastor.jpeg" alt="Tacos al pastor">
-                <p class="descripcion">Deliciosa carne marinada al estilo tradicional, cocinada al trompo y servida con piña, cebolla y cilantro.</p>
-            
-                <h4>Suadero - $14</h4>
-                <img src="suadero.jpeg" alt="Tacos de suadero">
-                <p class="descripcion">Suave carne de puerco cocida en su propia grasa, servida con cebolla y cilantro.</p>
-            
-                <h4>Longaniza - $14</h4>
-                <img src="longaniza.jpeg" alt="Tacos de longaniza">
-                <p class="descripcion">Chorizo artesanal frito con sabor picante, acompañado con cebolla y cilantro.</p>
-            
-                <h4>Campechano - $15</h4>
-                <img src="campechana.jpeg" alt="Tacos de campechana">
-                <p class="descripcion">Combinacion de suadero y longaniza, siendo una combinacion rica y crujiente acompañado de cilantro y cebolla.</p>
-            
-                <h4>Soya (opcion vegetariana) - $14</h4>
-                <img src="soya.jpeg" alt="Tacos de soya">
-                <p class="descripcion">Soya sazonada con especias caseras que le dan un sabor delicioso, saludable y sin carne.</p>
-            </div>            
-        </div>
-      
-        <div class="categoria">
-            <h3>Tacos Especiales</h3>
-            
-            <div class="item">
-                <h4>Tripa - $18</h4>
-                <img src="tripa.jpeg" alt="Tacos de Tripa">
-                <p class="descripcion">Tripa dorada al comal crujiente y suave acompañada con cebolla y cilantro.</p>
-            </div>            
-        </div>        
+            <h2>Menu</h2>
+            <h3 id="menu-titulo">Tacos Clasicos</h3>
 
-        <div class="categoria">
-            <h3>Gringas</h3>
+            <div id="menu-contenido" class="contenido-pagina">
+                <h3>Tacos Clasicos</h3>
 
-            <div class="item">
-                <h4>Tortilla de harina con queso derretido y pastor - $35</h4>
-                <img src="gringas.jpeg" alt="Gringa de queso derretido y pastor">
-                <p class="descripcion">Tortilla de harina con queso derretido y pastor, servida con piña, cilantro y cebolla.</p>
-            </div>    
-        </div>        
-        
-        <div class="categoria">
-            <h3>Tortas</h3>
-
-            <div class="item">
-                <h4>Torta de pastor - $38</h4>
-                <img src="torta de pastor.jpeg" alt="Torta de pastor">
-                <p class="descripcion">Pan crujiente al comal con pastor, piña, cilantro y cebolla.</p>
-
-                <h4>Torta de suadero - $32</h4>
-                <img src="torta de suadero.jpeg" alt="Torta de suadero">
-                <p class="descripcion">Pan crujiente al comal con suadero, cilantro y cebolla.</p>
-
-                <h4>Torta de longaniza - $35</h4>
-                <img src="torta de longaniza.jpeg" alt="Torta de longaniza">
-                <p class="descripcion">Pan crujiente al comal con longaniza frita, cilantro y cebolla.</p>
-
-                <h4>Torta campechana - $35</h4>
-                <img src="torta de campechana.jpeg" alt="Torta campechana">
-                <p class="descripcion">Pan crujiente al comal con una mezcla de longaniza y suadero, acompañado con cilantro y cebolla.</p>      
-            </div>              
-        </div>
-
-        <div class="categoria">
-            <h3>Bebidas</h3>
-            <div class="item">
-                <h4>Coca-cola 600ml - $20.00</h4>
-                <img src="coca-cola.jpeg" alt="Coca-cola">
-
-                <h4>Jarritos 600ml - $21.00</h4>
-                <img src="jarritos.jpeg" alt="Jarritos">
-
-                <h4>Sprite 600ml - $20.00</h4>
-                <img src="sprite.jpeg" alt="Sprite">
-
-                <h4>Mundet de Manzana 600ml - $20.00</h4>
-                <img src="mundet.jpeg" alt="Mundet">
+                <div class="item">
+                    <h4>Pastor - $16</h4>
                 
-                <h4>Boing 600ml - $18.00</h4>
-                <img src="boing.jpeg" alt="Boing">
+                    <h4>Suadero - $14</h4>
                 
-                <h4>Pepsi 600ml - $22.00</h4>
-                <img src="pepsi.jpeg" alt="Pepsi">
+                    <h4>Longaniza - $14</h4>
+                
+                    <h4>Campechano - $15</h4>
+                
+                    <h4>Soya (opcion vegetariana) - $14</h4>
+                </div>            
             </div>
-        </div>
-        </div>    
+                  
+            <div class="navegacion">
+                <button id="anterior" class="flecha">&#8592; Anterior</button>
+                <button id="siguiente" class="flecha">Siguiente &#8594;</button>
+            </div>
+        </div>            
     </section>
+
+    <script>
+        const paginas = [
+            {
+                titulo: "Tacos clasicos",
+                contenido: `
+                <h4>Pastor - $16</h4>
+                <h4>Suadero - $14</h4>
+                <h4>Longaniza - $14</h4>
+                <h4>Campechano - $15</h4>
+                <h4>Soya (vegetariano) - $14</h4>
+                <img src="pastor.jpeg" alt="Pastor">
+                `
+            },
+            {
+                titulo: "Tacos especiales",
+                contenido: `
+                <h4>Tripa - $18</h4>
+                <h4>Cabeza - $18</h4>
+                <img src="tripa.jpeg" alt="tripa">
+                `
+            },
+            {
+                titulo: "Gringas",
+                contenido: `
+                <h4>Tortilla de harina con queso derretido y pastor - $35</h4>
+                <img src="gringas.jpeg" alt="gringa">
+                `
+            },
+            {
+                titulo: "Tortas",
+                contenido: `
+                <h4>Torta de pastor - $38</h4>
+                <h4>Torta de suadero - $32</h4>
+                <h4>Torta de longaniza - $35</h4>
+                <h4>Torta campechana - $35</h4>
+                <img src="torta de longaniza.jpeg" alt="tortas">
+                `
+            },
+            {
+                titulo: "Bebidas",
+                contenido: `
+                <h4>Coca-cola 600ml - $20.00</h4>
+                <h4>Jarritos 600ml - $21.00</h4>
+                <h4>Sprite 600ml - $20.00</h4>
+                <h4>Mundet de Manzana 600ml - $20.00</h4>
+                <h4>Boing 600ml - $18.00</h4>
+                <h4>Pepsi 600ml - $22.00</h4>
+                <img src="jarritos.jpeg" alt="jarritos">
+                `
+            }
+        ];
+
+        let indice = 0;
+        
+        const menuTitulo = document.getElementById("menu-titulo");
+        const menuContenido = document.getElementById("menu-contenido");
+
+        function cambiarPagina(nuevaPagina) {
+            menuContenido.classList.add("oculto");
+            setTimeout(() => {
+                indice = nuevaPagina;
+                menuTitulo.textContent = paginas[indice].titulo;
+                menuContenido.innerHTML = paginas[indice].contenido;
+                menuContenido.classList.remove("oculto");
+            }, 500); // tiempo de animación
+        }
+
+        document.getElementById("siguiente").addEventListener("click", () => {
+            cambiarPagina((indice + 1) % paginas.length);
+        });
+
+        document.getElementById("anterior").addEventListener("click", () => {
+            cambiarPagina((indice - 1 + paginas.length) % paginas.length);
+        });
+
+        // Cargar la primera página
+        menuTitulo.textContent = paginas[indice].titulo;
+        menuContenido.innerHTML = paginas[indice].contenido;
+    </script>
 
     <section id="redes">
         <div class="menu">
@@ -511,7 +595,7 @@ Franki, con algo de miedo, se acercó y les ofreció su ayuda. Al principio, los
         </div>  
     </section>
 
-    <section id="politicas">
+    <section id="políticas">
         <div class="menu">
             <h2>Políticas de Calidad y Operación</h2>
             <p class="descripcion"><strong>Basadas en los valores de Calidad, Tradición y Pasión.</strong></p>
@@ -570,7 +654,98 @@ Franki, con algo de miedo, se acercó y les ofreció su ayuda. Al principio, los
             <h3>Uso de Plástico</h3>
             <p class="descripcion">Los platos plásticos utilizados serán reutilizables y sometidos a estrictos procesos de lavado y desinfección. Se evitará el uso de plásticos de un solo uso siempre que sea posible.</p>
         </div>
+    </section>    
+
+    <section id="satisfaccion">
+        <div class="menu">
+            <h2>Encuesta de Satisfacción</h2>
+            <div class="satisfaccion">
+                <label for="nivel">¿Qué tan satisfecho estás con nuestro servicio?</label><br>
+                <div class="barra">
+                    <span>😡</span>
+                    <input type="range" id="nivel" name="nivel" min="1" max="5" value="3" class="slider">
+                    <span>😍</span>
+                </div>
+                <p id="resultado" style="font-size: 18px; text-align: center; margin-top: 10px;"></p>    
+            </div>
+
+            <form id="encuesta" style="margin-top:30px; text-align:left;">
+                <h3>¿Con qué frecuencia nos visitas?</h3>
+                <label><input type="radio" name="frecuencia" value="Primera vez"> Primera vez</label><br>
+                <label><input type="radio" name="frecuencia" value="Una vez al mes"> Una vez al mes</label><br>
+                <label><input type="radio" name="frecuencia" value="Cada semana"> Cada semana</label><br>
+                <label><input type="radio" name="frecuencia" value="Más de dos veces por semana"> Más de dos veces por semana</label><br><br>
+
+                <h3>¿Cómo calificarías el tiempo de atención?</h3>
+                <label><input type="radio" name="tiempo" value="Muy rápido"> Muy rápido</label><br>
+                <label><input type="radio" name="tiempo" value="Rápido"> Rápido</label><br>
+                <label><input type="radio" name="tiempo" value="Regular"> Regular</label><br>
+                <label><input type="radio" name="tiempo" value="Lento"> Lento</label><br><br>
+
+                <h3>¿Cómo calificarías el sabor de nuestros tacos?</h3>
+                <label><input type="radio" name="sabor" value="Excelente"> Excelente</label><br>
+                <label><input type="radio" name="sabor" value="Bueno"> Bueno</label><br>
+                <label><input type="radio" name="sabor" value="Regular"> Regular</label><br>
+                <label><input type="radio" name="sabor" value="Malo"> Malo</label><br><br>
+
+                <h3>¿Qué tan satisfecho quedas con el tamaño de los tacos?</h3>
+                <label><input type="radio" name="tamano" value="Muy satisfecho"> Muy satisfecho</label><br>
+                <label><input type="radio" name="tamano" value="Satisfecho"> Satisfecho</label><br>
+                <label><input type="radio" name="tamano" value="Regular"> Regular</label><br>
+                <label><input type="radio" name="tamano" value="Insatisfecho"> Insatisfecho</label><br><br>
+
+                <h3>¿Qué opinas de nuestros precios?</h3>
+                <label><input type="radio" name="precio" value="Muy económicos"> Muy económicos</label><br>
+                <label><input type="radio" name="precio" value="Justos"> Justos</label><br>
+                <label><input type="radio" name="precio" value="Un poco caros"> Un poco caros</label><br>
+                <label><input type="radio" name="precio" value="Caros"> Caros</label><br><br>
+
+                <h3>¿Nos recomendarías a tus amigos o familiares?</h3>
+                <label><input type="radio" name="recomendacion" value="Definitivamente sí"> Definitivamente sí</label><br>
+                <label><input type="radio" name="recomendacion" value="Probablemente sí"> Probablemente sí</label><br>
+                <label><input type="radio" name="recomendacion" value="No estoy seguro"> No estoy seguro</label><br>
+                <label><input type="radio" name="recomendacion" value="No"> No</label><br><br>
+
+                <button type="submit" style="margin-top:20px; padding:10px 20px; font-size:16px; background:#f26522; color:white; border:none; border-radius:5px; cursor:pointer;">
+                    Enviar
+                </button>
+            </form>
+        </div>    
     </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const slider = document.getElementById('nivel');
+            const resultado = document.getElementById('resultado');
+
+            const textos = ['Muy Malo', 'Malo', 'Regular', 'Bueno', 'Excelente'];
+            const colores = ['#ff0000', '#ff6600', '#ffcc00', '#66cc66', '#009900'];
+            resultado.textContent = textos[slider.value - 1];
+
+        function actualizarTexto() {
+            const valor = slider.value - 1;
+            resultado.textContent = textos[valor];
+            resultado.style.color = colores[valor];
+        }
+
+            slider.addEventListener('input', actualizarTexto);
+                actualizarTexto(); // Inicializa el texto y el color al cargar
+
+            slider.addEventListener('input', () => {
+                resultado.textContent = textos[slider.value - 1];
+        });
+
+        // Opcional: acción cuando se envía la encuesta
+        document.getElementById('encuesta').addEventListener('submit', e => {
+            e.preventDefault();
+            alert('¡Gracias por tu opinión!');
+            });
+        });
+    </script>
 </body>
 </html> 
+
+
+  
+
 
